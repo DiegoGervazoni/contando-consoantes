@@ -5,15 +5,16 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        String[] consoantes = new String[6];
-        int quantidadesConsoantes = 0;
+        String[] consoantes = new String[6]; //transforma o array em um objeto
+        int quantidadesConsoantes = 0; //inicializa a qtd de consoantes
 
-        int count = 0;
+        int count = 0; //inicializa o contador em zero
 
         do {
-            System.out.println("Digite uma letra: ");
-            String letra = sc.next();
+            System.out.println("Digite uma letra: "); //pede ao usuario a insercao de letras
+            String letra = sc.next(); //faz a leitura da letra que o usuario insere
 
+            //esse if, utiliza o igual/ignorar o tamanhoDaLetra
             if (!(letra.equalsIgnoreCase("a") ||
                     letra.equalsIgnoreCase("e") ||
                     letra.equalsIgnoreCase("i") ||
@@ -21,14 +22,16 @@ public class Main {
                     letra.equalsIgnoreCase("u"))) {
 
                 consoantes[count] = letra;
-                quantidadesConsoantes++;
+                quantidadesConsoantes++; //faz a iteração
             }
-            count++;
-        } while (count < consoantes.length);
+            count++; //contador que iterar o do while
+        } while (count < consoantes.length); //encerra quando o tamanho da consoante for menor que o inserido no array
 
         System.out.print("Consoantes: ");
-        for(String consoante : consoantes){
-            if(consoante !=  null){
+
+        //agora sera utilizado o forEach
+        for(String consoante : consoantes){ //transforma os consoantes em consoante
+            if(consoante !=  null){ //se a consoante for diferente de null, imprime
                 System.out.print(consoante + " ");
             }
         }
